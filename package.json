@@ -1,0 +1,26 @@
+{
+  "name": "dotadx-application",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "startDNS": "sudo pdns_server",
+    "package": "electron-packager . \"dotADX Search\" --platform=darwin --arch=x64 --overwrite --icon=icon.icns"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^32.1.0",
+    "electron-packager": "^17.1.2",
+    "prettier": "^3.3.3"
+  },
+  "build": {
+    "appId": "dev.u1t.dotADX",
+    "mac": {
+      "icon": "icon.icns"
+    }
+  }
+}
