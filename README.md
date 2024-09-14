@@ -55,3 +55,7 @@ _port.test.thing        3600    IN      TXT     "6731"
 ```
 
 `test.thing` points to 127.0.0.1 (loopback ip) and _port.test.thing points to port 6731, where it's being hosted.
+
+
+
+Also, sorry for the lack of support in how to do this on windows, I don't develop on windows and therefore I don't know how to do it on windows. Ask ChatGPT or something.
