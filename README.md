@@ -40,3 +40,18 @@ You're able to change the UI for the `index.html` file, but I recommend trying n
 Regards,
 
 u1terior
+
+**Note**: the authoritative server has ***no access whatsoever*** to the Global DNS, meaning you have free reign over all domains and zones registered. If you really wanted, you could register github.com to yourself or anything. TLDs can be whatever, but you **must** use an A record pointing to a static IP or 127.0.0.1 or whatever IP you currently have **and** a _port TXT record for the A record otherwise **it will not work**.
+
+It will look something like this in your DNS editor: (test.thing is a random test zone I have setup)
+
+```
+; Warning - every name in this file is ABSOLUTE!
+$ORIGIN .
+test.thing      3600    IN      SOA     a.misconfigured.dns.server.invalid hostmaster.test.thing 0 10800 3600 604800 3600
+test.thing      3600    IN      A       127.0.0.1
+test.thing      3600    IN      NS      test.thing
+_port.test.thing        3600    IN      TXT     "6731"
+```
+
+`test.thing` points to 127.0.0.1 (loopback ip) and _port.test.thing points to port 6731, where it's being hosted.
